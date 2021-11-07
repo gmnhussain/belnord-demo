@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <!-- Demo styles -->
+    <style>
+      html,
+      body {
+        position: relative;
+        height: 100%;
+      }
+
+      body {
+        background: red;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+      }
+
+      .swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        align-items: stretch;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: stretch;
+      }
+      .img-content {
+        display: block;
+        width: 65%;
+      }
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        /* object-fit: cover; */
+      }
+      .text-content{
+      display: block;
+      width: 35%;
+      background-color: #DCDCDC;
+      }
+      .swiper-slide .textbox-upper {
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        /* object-fit: cover; */
+      }
+      .text-content{
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+        flex-flow: column nowrap;
+        height: 100%;
+        width: 35%;
+      }
+      .textbox-upper{
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+        flex-flow: column;
+        height: 40%;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        width: 100%;
+      }
+      .textbox-number{
+        margin-top: 1em;
+      }
+      .textbox-header{
+        margin: 1em 0;
+      }
+      .header-text{
+        text-align: center;
+        font-family: 'Seta Reta NF', serif;
+        font-style: normal;
+        text-transform: uppercase;
+        color: #891a1c;
+        font-size: 1.625em;
+        line-height: normal;
+        letter-spacing: .1875em;
+      }
+      .swiper-slide-textbox-lower-text {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+        flex-flow: column;
+        height: 40%;
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+        width: 100%;
+      }
+      .swiper-slide-paragraph-text {
+      	font-family: "Syntax LT Std Roman",helvetica,sans-serif;
+      	font-weight: normal;
+      	font-style: normal;
+      	text-align: justify;
+      }
+      .swiper-slide-paragraph-text p {
+      	font-size: .875em;
+      	line-height: 1.5em;
+      }
+      .swiper-slide-textbox-lower-button {
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          height: 20%;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          width: 100%;
+      }
+      a {
+      	color: inherit;
+      	text-decoration: none;
+      }
+      .swiper-slide-paragraph-text p{
+        margin: 0 50px;
+      }
+      /*  Propagations */
+      .swiper-pagination {
+        display: flex;
+        flex-direction: column;
+      	position: absolute;
+      	top: 50%;
+      	right: 10px;
+      	width: auto !important;
+      	left: auto !important;
+      	margin: 0;
+      }
+      .swiper-pagination-bullet {
+      	padding: 5px 10px;
+      	border-radius: 0;
+      	width: auto;
+      	height: 30px;
+      	text-align: center;
+      	line-height: 30px;
+      	font-size: 12px;
+      	color:#000;
+      	opacity: 1;
+      	background: rgba(0,0,0,0.2);
+      }
+      .swiper-pagination-bullet-active {
+      	color:#fff;
+      	background: #007aff;
+      }
+      /* .swiper-pagination {
+        display: flex;
+        flex-direction: column;
+      	position: absolute;
+      	right: : 0;
+      	bottom: : : 0;
+      	width: auto !important;
+      	left: auto !important;
+      	margin: 0;
+      }
+      .swiper-pagination-bullet {
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        line-height: 20px;
+        font-size: 12px;
+        color: #000;
+        opacity: 1;
+        background: rgba(0, 0, 0, 0.2);
+      }
+
+      .swiper-pagination-bullet-active {
+        color: #fff;
+        background: #007aff;
+      } */
+      /* .fadeInBottom { animation-name: fadeInBottom }
+      @keyframes fadeInBottom {
+          from {
+              opacity: 0;
+              transform: translateY(100%);
+          }
+          to { opacity: 1 }
+      } */
+      .fade-in {
+          animation: fadeIn 6s;
+      }
+
+      @keyframes fadeIn {
+          from {
+              opacity: 0;
+              /* transform: translateY(100%); */
+          }
+          to { opacity: 1 }
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <!-- <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="swiper-slide">
+            <img src="./images/winter.jpg" alt="kisu">
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/leaves.jpg" alt="kisu">
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/hamburg.jpg" alt="kisu">
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/winter.jpg" alt="kisu">
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/hamburg.jpg" alt="kisu">
+        </div>
+      </div> -->
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+
+          <div class="fade-in text-content cssanimation sequence fadeInBottom">
+            <div class="textbox-upper" id="txt-upr">
+              <div class="textbox-number">01</div>
+              <div class="textbox-header header-text">A Sense of <br> Arrival </div>
+            </div>
+            <div class="swiper-slide-textbox-lower-text" id="txt-lower">
+              <div class="swiper-slide-paragraph-text">
+                <p>The grandest of the Upper West Side apartment houses, palatial, beautifully proportioned, the Belnord is as clean, ageless and modern as its limestone sisters elsewhere in Manhattan. It retains its special distinction as a cosseting, private haven in the midst of its vibrant, lively Upper West Side neighborhood. With six distinct residential lobbies, each offering three means of entrance to each residence, — a private residential elevator, a grand, open staircase, and a private freight lift — the Belnord feels as cloistered as it does noble.</p>
+              </div>
+            </div>
+            <div class="swiper-slide-textbox-lower-button">
+              <a href="#">
+                <button class="swiper-slide-textbox-button border-button learn-more-button">
+                  <div class="line top"></div>
+                  <div class="text">Learn more</div>
+                  <div class="line bottom"></div>
+
+                </button>
+              </a>
+            </div>
+          </div>
+          <div class="img-content">
+            <img src="./images/leaves.jpg" alt="kisu">
+            <button>click me</button>
+          </div>
+        </div>
+        <div class="swiper-slide">
+
+          <div class="fade-in text-content">
+            <div class="textbox-upper" id="txt-upr">
+              <div class="textbox-number">01</div>
+              <div class="textbox-header header-text">A Sense of <br> Arrival </div>
+            </div>
+            <div class="swiper-slide-textbox-lower-text" id="txt-lower">
+              <div class="swiper-slide-paragraph-text">
+                <p>The grandest of the Upper West Side apartment houses, palatial, beautifully proportioned, the Belnord is as clean, ageless and modern as its limestone sisters elsewhere in Manhattan. It retains its special distinction as a cosseting, private haven in the midst of its vibrant, lively Upper West Side neighborhood. With six distinct residential lobbies, each offering three means of entrance to each residence, — a private residential elevator, a grand, open staircase, and a private freight lift — the Belnord feels as cloistered as it does noble.</p>
+              </div>
+            </div>
+            <div class="swiper-slide-textbox-lower-button">
+              <a href="#">
+                <button class="swiper-slide-textbox-button border-button learn-more-button">
+                  <div class="line top"></div>
+                  <div class="text">Learn more</div>
+                  <div class="line bottom"></div>
+
+                </button>
+              </a>
+            </div>
+          </div>
+
+          <div class="img-content">
+            <img src="./images/hamburg.jpg" alt="kisu1">
+            <button>click me</button>
+          </div>
+
+        </div>
+        <div class="swiper-slide">
+
+          <div class="fade-in text-content">
+            <div class="textbox-upper">
+              <div class="textbox-number">01</div>
+              <div class="textbox-header header-text">A Sense of <br> Arrival </div>
+            </div>
+            <div class="swiper-slide-textbox-lower-text">
+              <div class="swiper-slide-paragraph-text">
+                <p>The grandest of the Upper West Side apartment houses, palatial, beautifully proportioned, the Belnord is as clean, ageless and modern as its limestone sisters elsewhere in Manhattan. It retains its special distinction as a cosseting, private haven in the midst of its vibrant, lively Upper West Side neighborhood. With six distinct residential lobbies, each offering three means of entrance to each residence, — a private residential elevator, a grand, open staircase, and a private freight lift — the Belnord feels as cloistered as it does noble.</p>
+              </div>
+            </div>
+            <div class="swiper-slide-textbox-lower-button">
+              <a href="#">
+                <button class="swiper-slide-textbox-button border-button learn-more-button">
+                  <div class="line top"></div>
+                  <div class="text">Learn more</div>
+                  <div class="line bottom"></div>
+
+                </button>
+              </a>
+            </div>
+          </div>
+
+          <div class="img-content">
+            <img src="./images/winter.jpg" alt="kisu3">
+          </div>
+
+        </div>
+        <div class="swiper-slide">
+
+          <div class="fade-in text-content">
+            <div class="textbox-upper">
+              <div class="textbox-number">01</div>
+              <div class="textbox-header header-text">A Sense of <br> Arrival </div>
+            </div>
+            <div class="swiper-slide-textbox-lower-text">
+              <div class="swiper-slide-paragraph-text">
+                <p>The grandest of the Upper West Side apartment houses, palatial, beautifully proportioned, the Belnord is as clean, ageless and modern as its limestone sisters elsewhere in Manhattan. It retains its special distinction as a cosseting, private haven in the midst of its vibrant, lively Upper West Side neighborhood. With six distinct residential lobbies, each offering three means of entrance to each residence, — a private residential elevator, a grand, open staircase, and a private freight lift — the Belnord feels as cloistered as it does noble.</p>
+              </div>
+            </div>
+            <div class="swiper-slide-textbox-lower-button">
+              <a href="#">
+                <button class="swiper-slide-textbox-button border-button learn-more-button">
+                  <div class="line top"></div>
+                  <div class="text">Learn more</div>
+                  <div class="line bottom"></div>
+
+                </button>
+              </a>
+            </div>
+          </div>
+          <div class="img-content">
+            <img src="./images/hamburg.jpg" alt="kisu3">
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      // var menu = ['01', '02', '03', '04']
+      var swiper = new Swiper(".mySwiper", {
+        // direction: "vertical",
+        direction: 'horizontal',
+        loop: true,
+        speed: 1200,
+        mousewheel: true,
+        pagination: {
+          el: ".swiper-pagination",
+          // type: "fraction",
+          // el: ".swiper-pagination",
+          // clickable: true,
+          
+          clickable: true,
+        // renderBullet: function (index, className) {
+        //   return '<span class="' + className + '">' + (menu[index]) + '</span>'; },
+        renderBullet: function (index, className) {
+            return '<span class="' + className + '">' + (index + 1) + "</span>";
+          },
+          mousewheel: {
+            invert: true,
+          },
+
+        },
+      });
+    </script>
+    <!-- <script>
+      $(document).ready(function(){
+        $("button").click(function(){
+          $("#txt-upr").fadeIn();
+          $("#txt-lower").fadeIn("3000");
+          $("#div3").fadeIn(30000);
+        });
+      });
+    </script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </body>
+</html>
