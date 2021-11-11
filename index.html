@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+
+    
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" integrity="sha512-3n19xznO0ubPpSwYCRRBgHh63DrV+bdZfHK52b1esvId4GsfwStQNPJFjeQos2h3JwCmZl0/LgLxSKMAI55hgw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Demo styles -->
+    <style>
+      html, body, div, span {
+        font-family: "Syntax LT Std Roman",helvetica,sans-serif;
+    }
+      body,
+      div,
+      p {
+          margin: 0;
+          padding: 0;
+          /* font-family: 'Montserrat', sans-serif; */
+          font-family: "Syntax LT Std Roman",helvetica,sans-serif;
+          font-size: 14.5px;
+      }
+
+      .go {
+          width: 25px;
+          stroke: #FFF;
+          stroke-width: 6;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          fill: none;
+          z-index: 12;
+      }
+
+      .go-prev,
+      .go-next {
+          position: absolute;
+          cursor: pointer;
+          top: 50%;
+          left: 5px;
+      }
+
+      .go-next {
+          left: calc(100% - 32px)
+      }
+
+
+      nav {
+          position: absolute;
+          bottom: 10px;
+          left: 50%;
+          width: inherit;
+          z-index: 100;
+          visibility: hidden;
+      }
+
+      .navDot {
+          position: relative;
+          width: 15px;
+          height: 15px;
+          background-color: rgba(255, 255, 255, 0.5);
+          opacity: 0.5;
+          border-radius: 50%;
+          border: 1px solid transparent;
+          margin-right: 20px;
+          float: left;
+          cursor: pointer;
+      }
+
+      .navDot:last-of-type {
+          margin-right: 0px;
+      }
+
+      .navDot:hover {
+          background-color: rgba(255, 255, 255, 0.65);
+          box-shadow: inset 0 0 0 3px #fff;
+      }
+
+      .slides-container {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100vh;
+          overflow: hidden;
+          z-index: 10;
+      }
+
+      .slide {
+          position: absolute;
+          top: 0;
+          left: 100%;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.35);
+          /* Este fondo se puede sustituir por cualquier color según cada slider */
+          overflow: hidden;
+      }
+
+      #slide02 .wrap {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 100%;
+          text-align: center;
+          height: 100px;
+          overflow: hidden;
+      }
+    .text-content{
+          display: block;
+          width: 35%;
+          background-color: #DCDCDC;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+          height: 100%;
+          width: 35%;
+          }
+            .img-content {
+          display: block;
+          width: 65%;
+          }
+          .swiper-slide img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          /* object-fit: cover; */
+          }
+          footer.footer-desktop {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            height: 40px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+            -webkit-box-pack: end;
+            -ms-flex-pack: end;
+            justify-content: flex-end;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            z-index: 51;
+            background: white;
+        }
+        footer {
+            width: 100%;
+        }
+        footer.footer-desktop-home {
+            background: none;
+        }
+        footer.footer-desktop .footer-item.left {
+            margin: 0 auto 0 15px;
+        }
+        .footer-item, .footer-item a {
+            text-align: center;
+            font-family: "Syntax LT Std Roman",helvetica,sans-serif;
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: .75em;
+            letter-spacing: .125em;
+        }
+        .wenge {
+            color: #615d59;
+        }
+        footer.footer-desktop .footer-item a {
+            margin: 0 15px;
+        }
+        footer.footer-desktop .footer-item a {
+            margin: 0 15px;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        footer.footer-desktop .footer-item:not(.left):last-child {
+            margin-right: 15px;
+            padding-right: 0;
+        }
+        footer.footer-desktop .footer-item:not(.left) {
+            padding-right: 24px;
+        }
+        footer.footer-desktop .footer-item {
+            margin: 0 5px;
+        }
+        .white {
+            color: #fff;
+        }
+
+  </style>
+  <title>Document</title>
+</head>
+
+<body>
+  
+
+  <div class="slides-container">
+      <div class="slide active" id="slide01"><!-- Smart Training -->
+        <div class="swiper-slide">
+          <div class=" text-content">
+              <div class="lines" id="txt-lower">
+                <div class="fade-in">
+                  <p>The grandest of the Upper West Side apartment houses, palatial, beautifully proportioned, the Belnord is as clean, ageless and modern as its limestone sisters elsewhere in Manhattan. It retains its special distinction as a cosseting, private haven in the midst of its vibrant, lively Upper.</p>
+                </div>
+              </div>
+              
+          </div>
+          <div class="img-content">
+            <img src="./images/leaves.jpg" alt="kisu">
+            
+          </div>
+        </div>
+        <!-- <div class="swiper mySwiper">
+          <div class="swiper-wrapper" style="height: 375px; transform: translate3d(0px, 0px, 0px);">
+            <div class="swiper-slide swiper-slide-active" style="width: 1360px;">
+              <div class="swiper-slide">
+                <img src="./images/winter.jpg" alt="kisu">
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide gsap-one">
+
+            <div class=" text-content cssanimation sequence">
+              <div class="textbox-upper">
+                <div class="textbox-number lines">01</div>
+                <div class="textbox-header header-text lines">A Sense of <br> Arrival </div>
+              </div>
+              <div class="swiper-slide-textbox-lower-text">
+                <div class="swiper-slide-paragraph-text lines">
+                  <p>The grandest of the Upper West Side apartment houses, palatial, beautifully proportioned, the Belnord is as clean, ageless and modern as its limestone sisters elsewhere in Manhattan. It retains its special distinction as a cosseting, private haven in the midst of its vibrant, lively Upper West Side neighborhood. With six distinct residential lobbies, each offering three means of entrance to each residence, — a private residential elevator, a grand, open staircase, and a private freight lift — the Belnord feels as cloistered as it does noble.</p>
+                </div>
+              </div>
+              <div class="swiper-slide-textbox-lower-button">
+                <a href="#">
+                  <button class="swiper-slide-textbox-button border-button learn-more-button">
+                    <div class="line top"></div>
+                    <div class="text">Learn more</div>
+                    <div class="line bottom"></div>
+  
+                  </button>
+                </a>
+              </div>
+            </div>
+            <div class="img-content">
+              <img src="./images/leaves.jpg" alt="kisu">
+              
+            </div>
+          </div>
+        </div> -->
+      </div>
+      <div class="slide" id="slide02"><!-- Smart App -->
+        <div class="swiper-slide">
+          <div class=" text-content">
+              <div class="lines" id="txt-lower">
+                <div class="fade-in">
+                  <p>The grandest of the Upper West Side apartment houses, palatial, beautifully proportioned, the Belnord is as clean, ageless and modern as its limestone sisters elsewhere in Manhattan. It retains its special distinction as a cosseting, private haven in the midst of its vibrant, lively Upper.</p>
+                </div>
+              </div>
+              
+          </div>
+          <div class="img-content">
+            <img src="./images/winter.jpg" alt="kisu">
+            
+          </div>
+        </div>
+      </div>
+      <div class="slide" id="slide03">
+        <div class="swiper-slide">
+          <div class=" text-content">
+              <div class="lines" id="txt-lower">
+                <div class="fade-in">
+                  <p>The grandest of the Upper West Side apartment houses, palatial, beautifully proportioned, the Belnord is as clean, ageless and modern as its limestone sisters elsewhere in Manhattan. It retains its special distinction as a cosseting, private haven in the midst of its vibrant, lively Upper.</p>
+                </div>
+              </div>
+              
+          </div>
+          <div class="img-content">
+            <img src="./images/leaves.jpg" alt="kisu">
+            
+          </div>
+        </div>
+      </div>
+      <div class="slide" id="slide04">
+          
+          <div class="swiper-slide">
+            <div class=" text-content">
+                <div class="lines" id="txt-lower">
+                  <div class="fade-in">
+                    <p>The grandest of the Upper West Side apartment houses, palatial, beautifully proportioned, the Belnord is as clean, ageless and modern as its limestone sisters elsewhere in Manhattan. It retains its special distinction as a cosseting, private haven in the midst of its vibrant, lively Upper.</p>
+                  </div>
+                </div>
+                
+            </div>
+            <div class="img-content">
+              <img src="./images/hamburg.jpg" alt="kisu">
+              
+            </div>
+          </div>
+      </div>
+      <div class="slide" id="slide05">
+          
+          <div class="swiper-slide">
+            <div class=" text-content">
+                <div class="lines" id="txt-lower">
+                  <div class="fade-in">
+                    <p>The grandest of the Upper West Side apartment houses, palatial, beautifully proportioned, the Belnord is as clean, ageless and modern as its limestone sisters elsewhere in Manhattan. It retains its special distinction as a cosseting, private haven in the midst of its vibrant, lively Upper.</p>
+                  </div>
+                </div>
+                
+            </div>
+            <div class="img-content">
+              <img src="./images/winter.jpg" alt="kisu">
+              
+            </div>
+          </div>
+      </div>
+      <div class="slide" id="slide06">
+        <div class="swiper-slide">
+          <div class=" text-content">
+              <div class="lines" id="txt-lower">
+                <div class="fade-in">
+                  <p>The grandest of the Upper West Side apartment houses, palatial, beautifully proportioned, the Belnord is as clean, ageless and modern as its limestone sisters elsewhere in Manhattan. It retains its special distinction as a cosseting, private haven in the midst of its vibrant, lively Upper.</p>
+                </div>
+              </div>
+              
+          </div>
+          <div class="img-content">
+            <img src="./images/leaves.jpg" alt="kisu">
+            
+          </div>
+        </div>
+      </div>
+  </div>
+  <footer class="footer-desktop footer-desktop-home" role="contentinfo">
+    <div class="footer-item left wenge">
+      <a href="/legal/" style="font-size: .75em;">Legal</a>
+      <a href="/accessibility-statement/" style="font-size: .75em;">Accessibility Statement</a>
+      <a href="https://assets.connect.elliman.com/8c8635b4-f127-4f3a-8974-c0fed880ad13" target="_blank" style="font-size: .75em;">Fair Housing Notice</a>
+    </div>
+    <div class="footer-item white">
+      <a href="/press/" style="font-size: .75em;">Press</a>
+      <a href="/availability/" style="font-size: .75em;">Availability</a>
+      <a href="/contact/" style="font-size: .75em;">Contact</a>
+    </div>
+  </footer>
+</body>
+
+    
+
+    <!-- Initialize Swiper -->
+    
+    <!-- <script>
+      tl = new TimelineMax ({});
+tl.from('.text-content', 1.5, {y:"100%", ease:Power4.easeOut})
+    </script> -->
+    
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js" integrity="sha512-6MCPs9fbSIt6mTpJH2Lbo9Kk71gcgwY85BCqJGP04x+O08W3m/OiKfMiMc4VQKYn+DCtAQwpGumWeD0cACeRsQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script> -->
+    
+    <!--<script>
+      gsap.form('gsap-one', {opacity: 0, duration: 1, y: -50})
+    </script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/CSSRulePlugin.min.js" integrity="sha512-1z2hYE5HWzZW8cAJRhlwT472AGZC3HlJyWYmW3SXG/Qh0S6TFdkYEqJaPwT7eCy9tI4KvwrRVK6IGqtqErpHQg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+    <!-- Swiper JS -->
+    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
+
+    <script>
+              console.clear();
+
+//  =========================  xxxxx  ==========================
+
+// gsap.set(".centered", { autoAlpha: 1, xPercent: -50, yPercent: -50 });
+// gsap.set("h1", { autoAlpha: 1, yPercent: -50 });
+gsap.set(" .slide", { autoAlpha: 1, xPercent: 0 });
+// gsap.set(".go", { autoAlpha: 1, yPercent: -50 });
+
+var slides = $(".slide"),
+    activeSlide = $(".slide.active"),
+    next = $(".go-next"),
+    prev = $(".go-prev"),
+    moveSlideTL = gsap.timeline(),
+    lines = $('h1');
+
+// Animaciones individuales para cada slider ======
+
+const allSlides = [].slice.call(slides);
+let animations = [];
+
+for (let [i] of allSlides.entries()) {
+    animations[i] = gsap.timeline({});
+}
+
+animations[0] // Smart Training ======
+      .from('#slide01 .lines', { y: 30, autoAlpha: 0, duration: 1 })
+      .reverse();
+    // gsap.from('#slide01 .olivoSt',{autoAlpha: 0, duration: 3, y: -200, ease: 'expo.inOut'})
+    // gsap.from('#slide01 .selloSt',{autoAlpha: 0, duration: 5, y: 200, ease: 'expo.inOut'})
+    // gsap.from('#slide01 .jumping',{autoAlpha: 0, delay: 1.2, duration: 4, y: 300, ease: 'elastic.out(1, 0.3)'})
+    // gsap.from('#slide01 .anima1',{autoAlpha: 0, delay: 2, duration: 2, y: -30, stagger: 0.7})
+    // gsap.from('#slide01 .tituloSt',{autoAlpha: 0, delay: 2, duration: 3, x: 100, ease: 'expo.inOut'})
+
+animations[1] // Smart App ======
+      .from('#slide02 .lines', { y: 30, autoAlpha: 0, duration: 1 })
+      .reverse();
+    // gsap.from('#slide02 .checkSa',{autoAlpha: 0, delay: 3, duration: 4, y: 300, ease: 'elastic.out(1, 0.3)'})
+    // gsap.from('#slide02 .pantallasSa',{autoAlpha: 0, duration: 4, x: -100, ease: 'expo.inOut'})
+    // gsap.from('#slide02 .engranajesSa',{autoAlpha: 0, duration: 3, y: -200, ease: 'back.inOut(1.7)'})
+    // gsap.from('#slide02 .anima2',{autoAlpha: 0, delay: 2, duration: 2, y: -30, stagger: 0.7})
+    // gsap.from('#slide02 .tituloSa',{autoAlpha: 0, delay: 2, duration: 3, x: 100, ease: 'expo.inOut'})
+    // gsap.from('#slide02 .chicaSa',{autoAlpha: 0, duration: 1, x: 100, ease: 'slow(0.7, 0.7, false)'})
+
+animations[2]
+    .from('#slide03 .lines', { y: 30, autoAlpha: 0, duration: 1 })
+    .reverse();
+
+animations[3]
+    .from('#slide04 .lines', { y: 30, autoAlpha: 0, duration: 1 })
+    .reverse();
+
+animations[4]
+    .from('#slide05 .lines', { y: 30, autoAlpha: 0, duration: 1 })
+    .reverse();
+
+animations[5]
+    .from('#slide06 .lines', { y: 30, autoAlpha: 0, duration: 1 })
+    .reverse();
+
+// Fin animaciones ===========================
+
+// Rueda del ratón ==========================
+
+function onMouseWheel(event) {
+    //Normalize event wheel delta
+    var delta = event.originalEvent.wheelDelta / 30 || -event.originalEvent.detail;
+
+    if (delta < -1) {  //scrolling down -> next slide
+        if (!moveSlideTL.isActive()) {
+            var slideFrom = $(".slide.active"),
+                sectionToIndex = slides.index(slideFrom);
+
+            if (sectionToIndex !== slides.length - 1) {
+                slideTo = slides.eq(sectionToIndex + 1);
+                moveToSlide(slideFrom, slideTo);
+            }
+        }
+
+    } else if (delta > 1) {  // -> prev
+        if (!moveSlideTL.isActive()) {
+            if (!moveSlideTL.isActive()) {
+                var slideFrom = $(".slide.active"),
+                    sectionToIndex = slides.index(slideFrom);
+
+                if (sectionToIndex != 0) {
+                    slideTo = slides.eq(sectionToIndex - 1);
+                    moveToSlide(slideFrom, slideTo);
+                }
+            }
+        }
+    }
+    //event.preventDefault();
+}
+
+// ============================
+function dotClick() {
+
+    var slideFrom = $(".slide.active"),
+        sectionToIndex = $(this).index(),
+        sectionToIndex = $(this).index(),
+        slideTo = slides.eq(sectionToIndex);
+
+    var indexFrom = slideFrom.index();
+
+    console.log(slideFrom, 'from: ' + indexFrom, 'to: ' + sectionToIndex, 'slideTo: ' + slideTo);
+
+    //if(slideFrom !== slideTo && !moveSlideTL.isActive()) {  // not working
+
+    if (indexFrom !== sectionToIndex && !moveSlideTL.isActive()) {
+        moveToSlide(slideFrom, slideTo);
+    }
+
+}
+
+// =============================
+function nextClick() {
+    if (!moveSlideTL.isActive()) {
+        var slideFrom = $(".slide.active"),
+            sectionToIndex = slides.index(slideFrom);
+
+        if (sectionToIndex !== slides.length - 1) {
+            slideTo = slides.eq(sectionToIndex + 1);
+            moveToSlide(slideFrom, slideTo);
+        }
+    }
+}
+
+function prevClick() {
+    if (!moveSlideTL.isActive()) {
+        var slideFrom = $(".slide.active"),
+            sectionToIndex = slides.index(slideFrom);
+
+        if (sectionToIndex != 0) {
+            slideTo = slides.eq(sectionToIndex - 1);
+            moveToSlide(slideFrom, slideTo);
+        }
+    }
+}
+
+// ==============================
+function moveToSlide(slideFrom, slideTo) {
+
+    gsap.set('.go', { autoAlpha: 0 }) // ????
+
+    if (slides.index(slideFrom) < slides.index(slideTo)) { // vorwärts
+
+        moveSlideTL = gsap.timeline({ onComplete: setActiveSlide, onCompleteParams: [slideTo, slideFrom] })
+            .to(slideTo, { xPercent: -100, duration: 0.5, className: "slide active" })
+            .to(slideFrom, { xPercent: -200, duration: 0.5, className: "slide" }, 0)
+            .set(slideFrom, { xPercent: 0 })
+
+    } else {
+
+        moveSlideTL = gsap.timeline({ onComplete: setActiveSlide, onCompleteParams: [slideTo, slideFrom] })
+            .set(slideTo, { xPercent: -200, className: "slide active" })
+            .to(slideTo, { xPercent: -100, duration: 0.5 })
+            .to(slideFrom, { xPercent: 0, duration: 0.5, className: "slide" }, 0)
+    }
+
+}
+
+function setActiveSlide(active, last) {
+
+    var currentSlideIndex = slides.index(active);
+    var lastSlideIndex = slides.index(last);
+
+    animations[currentSlideIndex].reversed(false);
+    animations[lastSlideIndex].progress(0).reversed(true);
+
+    gsap.to(".navDot.active", { opacity: 0.5, scale: 1 });
+    $(".navDot.active").removeClass("active");
+    $(".navDot").eq(currentSlideIndex).addClass("active");
+    gsap.to(".navDot.active", { opacity: 1, scale: 1.3 });
+
+    if (currentSlideIndex == 0) {
+        gsap.set('.go-prev', { autoAlpha: 0 })
+    } else {
+        gsap.set('.go-prev', { autoAlpha: 1 })
+    }
+    if (currentSlideIndex == slides.length - 1) {
+        gsap.set('.go-next', { autoAlpha: 0 })
+    } else {
+        gsap.set('.go-next', { autoAlpha: 1 })
+    }
+
+}
+
+// ================================
+function init() {
+
+    for (var i = 0; i < slides.length; i++) {
+        var navDots = $('<div></div>').addClass("navDot").appendTo('nav');
+        gsap.set(".navDot:first-child", { className: "navDot active", opacity: 1, scale: 1.3, transformOrigin: 'center' });
+        navDots.on('click', dotClick);
+    };
+
+    if (slides[0]) {
+        gsap.set('.go-prev', { autoAlpha: 0 })
+    }
+
+    next.on('click', nextClick);
+    prev.on('click', prevClick);
+
+    $(window).on("mousewheel DOMMouseScroll", onMouseWheel);
+    //$(window).on("touchmove", onMouseWheel);
+
+    gsap.set($(".slide:odd"), { backgroundColor: "#0f8c0d", color: "#333333" });
+    gsap.set(".slide.active", { xPercent: -100 });
+    animations[0].reversed(false);
+}
+
+init();
+    </script>
+
+  </body>
+</html>
