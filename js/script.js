@@ -7,13 +7,7 @@ const setDimensions = function () {
 };
 
 const initPrimarySlider = () => {
-  let captions = [
-    "A Sense of Arrival",
-    "The Residences",
-    "The Belnord Club",
-    "A Remarkable Neighborhood",
-    "The Conservators",
-  ];
+  let captions = ["THE PROJECT", "THE HOUSING", "CONTACT"];
 
   const buildSlider = (direction) => {
     if (direction == "vertical") {

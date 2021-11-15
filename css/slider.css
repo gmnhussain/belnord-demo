@@ -8,6 +8,11 @@
   letter-spacing: 0.125em;
   padding-bottom: 6px;
   text-transform: uppercase;
+  /* update */
+  font-family: MartelSans;
+  font-weight: 400;
+  color: #262626;
+  border-color: #262626;
 }
 @media screen and (min-width: 1920px) {
   .primary-slide-content-number {
@@ -26,6 +31,7 @@
   line-height: 1.5em;
   letter-spacing: 0;
   margin: 1em 0;
+  color: #262626;
 }
 @media screen and (max-width: 1440px) {
   .swiper-slide-paragraph-text p {
@@ -104,6 +110,8 @@
   letter-spacing: 1px;
   position: relative;
   transform: translateY(-50%);
+  font-family: "Exo";
+  font-weight: 400;
 }
 @media screen and (max-width: 1200px) {
   .primary-slider .scroll-indicator {
@@ -349,6 +357,7 @@
   .primary-slide-content-lower-button
   .primary-slide-content-button {
   color: #000;
+  color: #262626;
 }
 
 .primary-slide-content
@@ -356,6 +365,7 @@
   .primary-slide-content-button
   .line {
   background-color: #000;
+  background-color: #262626;
 }
 
 .primary-slide-content
