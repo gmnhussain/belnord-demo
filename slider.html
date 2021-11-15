@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- meta info -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- site identity -->
+  <title>Belnord Demo</title>
+  <link href="images/favicon/favicon.ico" rel="shortcut icon" type="image/ico" />
+
+  <!-- css library -->
+  <link rel="stylesheet" type="text/css" href="vendor/swiper/swiper-bundle.min.css" />
+
+  <!-- custom CSS -->
+  <link rel="stylesheet" type="text/css" href="css/utils.css" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" href="css/slider.css" />
+</head>
+
+<body>
+  <!-- preloader -->
+  <div id="preloader" class="preloader">
+    <div class="loader"></div>
+  </div>
+
+  <!-- intro -->
+  <div class="intro">
+    <div class="intro-bg">
+      <div class="intro-bg-image">
+        <picture>
+          <source type="image/png" srcset="images/banner/intro.png" media="(min-width: 768px)" />
+          <source type="image/png" srcset="images/banner/intro-mobile.png" media="(max-width: 768px)" />
+          <img type="image/png" src="images/banner/intro.png" title="intro" />
+        </picture>
+      </div>
+      <div class="intro-textbox">
+        <div class="intro-textbox-calligraphy">
+          <img src="images/icons/intro-calligraphy.svg" alt="">
+        </div>
+        <div class="intro-textbox-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" id="" class="" viewbox="0 0 186 18">
+            <title>White Text Logo</title>
+            <g fill="#fff" id="letter-group">
+              <path d="M61.9,21c-1.4,0-2.5-.1-3.3-.1H55.9a.91.91,0,0,0,.4-.8V4.8a1,1,0,0,0-.4-.8h5.4c2.8,0,4.9,1.5,4.9,3.9a3.91,3.91,0,0,1-3.4,3.7c2.9.3,5.1,2.2,5.1,4.5-.1,2.8-2.3,4.9-6,4.9M60.3,4.9h-.1a6.52,6.52,0,0,0-1.8.2v6.4h1.9c2.3,0,3.8-1.4,3.8-3.2a3.54,3.54,0,0,0-3.8-3.4m.7,7.4H58.5v7.4a6.57,6.57,0,0,0,2.5.4c3,0,4.6-2,4.6-3.9,0-2.4-1.4-3.9-4.6-3.9" transform="translate(-6.8 -3)" />
+              <path d="M83.8,6.2A2.44,2.44,0,0,0,81.7,5H76.5v6.1h4.8a.87.87,0,0,0,.9-.6v2.2a1.15,1.15,0,0,0-.9-.6H76.5v7.7h5.9a2.48,2.48,0,0,0,2.2-1.2h.1L84.4,21H73.8a.91.91,0,0,0,.4-.8V4.8a1,1,0,0,0-.4-.8h9.7l.3,2.2Z" transform="translate(-6.8 -3)" />
+              <path d="M102.8,18.6l-.4,2.4H91.8a.91.91,0,0,0,.4-.8V4.8a1,1,0,0,0-.4-.8H95a1.23,1.23,0,0,0-.4.8V19.9h5.9a3,3,0,0,0,2.3-1.3Z" transform="translate(-6.8 -3)" />
+              <path d="M124.3,4.8V21H124L111.5,5.9V20.1a1.23,1.23,0,0,0,.4.8H110a.91.91,0,0,0,.4-.8V4.6l-.6-.6h2.9l10.6,12.6V4.8a1,1,0,0,0-.4-.8h2c-.3.2-.6.5-.6.8" transform="translate(-6.8 -3)" />
+              <path d="M139.8,21a8.9,8.9,0,0,1-9-9,9,9,0,0,1,18,0,8.9,8.9,0,0,1-9,9m0-17.1c-3.5,0-6.4,3.2-6.4,8.1s2.9,8.1,6.4,8.1,6.4-3.2,6.4-8.1-2.8-8.1-6.4-8.1" transform="translate(-6.8 -3)" />
+              <path d="M166.7,21a2.15,2.15,0,0,1-2-.9l-3.5-5.6a2.25,2.25,0,0,0-2.1-1.4h-1.7v7.1a1.23,1.23,0,0,0,.4.8h-3a.91.91,0,0,0,.4-.8V4.8a1,1,0,0,0-.4-.8h4.8c3.2,0,5.7,1.7,5.7,4.4a4.66,4.66,0,0,1-3.4,4.3,4.86,4.86,0,0,1,1.7,1.5l3.6,5.5a4.34,4.34,0,0,0,1.7,1.2h-2.2ZM158.9,5a5.31,5.31,0,0,0-1.4.1v7a7.84,7.84,0,0,0,1.4.2A4.07,4.07,0,0,0,163,8.5C163.1,6,161.1,5,158.9,5Z" transform="translate(-6.8 -3)" />
+              <path d="M183.8,21h-8a1,1,0,0,0,.5-.8V4.8a.89.89,0,0,0-.5-.8h8a8.74,8.74,0,0,1,9,8.5,8.74,8.74,0,0,1-9,8.5m-.7-15.9h-4.5V19.5a5.87,5.87,0,0,0,2.3.4H183a7.28,7.28,0,0,0,7.2-7.4,7.2,7.2,0,0,0-7.1-7.4" transform="translate(-6.8 -3)" />
+              <path d="M12.8,18H9.9l.4-.3a.52.52,0,0,0,.2-.4V8H8.4a1.56,1.56,0,0,0-1.3.7H6.8L7.2,7h8.4l.3,1.7h-.2V8.6A2.25,2.25,0,0,0,14.3,8H12.2v9.4a.52.52,0,0,0,.2.4Z" transform="translate(-6.8 -3)" />
+              <path d="M27.8,18H25l.4-.3a.52.52,0,0,0,.2-.4V12.5H20.1v4.8a.76.76,0,0,0,.2.4l.4.3H17.9l.4-.3a.52.52,0,0,0,.2-.4V7.7a.52.52,0,0,0-.2-.4L17.8,7h2.8l-.4.3a.52.52,0,0,0-.2.4v3.9h5.5V7.7a.52.52,0,0,0-.2-.4L25,7h2.8l-.4.3a.52.52,0,0,0-.2.4v9.6a.52.52,0,0,0,.2.4Z" transform="translate(-6.8 -3)" />
+              <path d="M38.6,18H31.9l.4-.3a.52.52,0,0,0,.2-.4V7.7a.52.52,0,0,0-.2-.4L31.8,7H38l.2,1.7H38V8.6c-.1-.4-.7-.6-1.1-.6H34.1v3.6h2.6c.2,0,.3-.1.4-.3l.3-.4v2.3l-.4-.4c-.1-.1-.2-.3-.4-.3H34V17h3.2a1.56,1.56,0,0,0,1.3-.7v-.1h.2Z" transform="translate(-6.8 -3)" />
+            </g>
+          </svg>
+        </div>
+        <div class="intro-textbox-text">
+          <p class="cursive">Re-envisioned by<br> Robert A.M. Stern Architects</p>
+        </div>
+        <button class="intro-textbox-button border-button">
+          <div class="line top"></div>
+          <div class="text">Explore The Upper West Side's Most Storied Building</div>
+          <div class="line bottom"></div>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- header -->
+  <header class="header">
+    <div class="header-logo">
+      <a href="#">
+        <img src="images/logo/logo-white.svg" alt="logo">
+      </a>
+    </div>
+  </header>
+
+  <!-- main viewport -->
+  <main class="viewport">
+    <div class="swiper primary-slider">
+
+      <div class="scroll-indicator">
+        <p>SCROLL</p>
+      </div>
+
+      <div class="swiper-wrapper primary-slider-wrapper">
+        <div class="swiper-slide primary-slide">
+          <div class="primary-slide-wrapper">
+            <div class="primary-slide-image">
+              <picture>
+                <source media="(max-width: 1050px)" srcset="images/slider/01_arrival_mobile_400.jpg 400w, images/slider/01_arrival_mobile_600.jpg 600w, images/slider/01_arrival_mobile_800.jpg 800w, images/slider/01_arrival_mobile_1100.jpg 1100w">
+                <source media="(min-width: 1050px)" srcset="images/slider/01_arrival_1500.jpg 1500w, images/slider/01_arrival_2000.jpg 2000w, images/slider/01_arrival_2500.jpg 2500w">
+                <img src="images/slider/01_arrival_2000.jpg" data-swiper-parallax="-100" data-swiper-parallax-opacity="0">
+              </picture>
+            </div>
+            <div class="primary-slide-content">
+              <div class="primary-slide-content-upper">
+                <div class="primary-slide-content-number">01</div>
+                <div class="primary-slide-content-header header-text">A Sense of<br>Arrival</div>
+              </div>
+              <div class="primary-slide-content-lower-text">
+                <div class="swiper-slide-paragraph-text">
+                  <p>The grandest of the Upper West Side apartment houses, palatial, beautifully proportioned, the Belnord is as clean, ageless and modern as its limestone sisters elsewhere in Manhattan. It retains its special distinction as a cosseting, private haven in the midst of its vibrant, lively Upper West Side neighborhood. With six distinct residential lobbies, each offering three means of entrance to each residence, — a private residential elevator, a grand, open staircase, and a private freight lift — the Belnord feels as cloistered as it does noble.</p>
+                </div>
+              </div>
+              <div class="primary-slide-content-lower-button">
+                <a href="#">
+                  <button class="primary-slide-content-button border-button learn-more-button">
+                    <div class="line top"></div>
+                    <div class="text">Learn More</div>
+                    <div class="line bottom"></div>
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide primary-slide">
+          <div class="primary-slide-wrapper">
+            <div class="primary-slide-image">
+              <picture>
+                <source media="(max-width: 1050px)" srcset="images/slider/02_residences_mobile_400.jpg 400w, images/slider/02_residences_mobile_600.jpg 600w, images/slider/02_residences_mobile_800.jpg 800w, images/slider/02_residences_mobile_1100.jpg 1100w">
+                <source media="(min-width: 1050px)" srcset="images/slider/02_residences_1500.jpg 1500w, images/slider/02_residences_2000.jpg 2000w, images/slider/02_residences_2500.jpg 2500w">
+                <img src="images/slider/02_residences_2000.jpg" data-swiper-parallax="-100" data-swiper-parallax-opacity="0">
+              </picture>
+            </div>
+            <div class="primary-slide-content">
+              <div class="primary-slide-content-upper">
+                <div class="primary-slide-content-number">02</div>
+                <div class="primary-slide-content-header header-text">The<br> Residences</div>
+              </div>
+              <div class="primary-slide-content-lower-text">
+                <div class="swiper-slide-paragraph-text">
+                  <p>With most floors entries sharing only one other apartment and multiple entrances to many units, The Belnord offers true exclusivity and privacy. Original apartment layouts — most floor-through, except in the dramatic corner residences — have been completely reinvented, opened up to allow easy appreciation of the building’s dramatic breadth, scale, and volume. The visionary Robert A.M. Stern Architect’s acute understanding of classic layouts and contemporary interiors has allowed those original floor plans to be both respected and completely rethought to meet the needs of the modern homeowner.</p>
+                </div>
+              </div>
+              <div class="primary-slide-content-lower-button">
+                <a href="#">
+                  <button class="primary-slide-content-button border-button learn-more-button">
+                    <div class="line top"></div>
+                    <div class="text">Learn More</div>
+                    <div class="line bottom"></div>
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide primary-slide">
+          <div class="primary-slide-wrapper">
+            <div class="primary-slide-image">
+              <picture>
+                <source media="(max-width: 1050px)" srcset="images/slider/03_belnord_club_mobile_400.jpg 400w, images/slider/03_belnord_club_mobile_600.jpg 600w, images/slider/03_belnord_club_mobile_800.jpg 800w, images/slider/03_belnord_club_mobile_1100.jpg 1100w">
+                <source media="(min-width: 1050px)" srcset="images/slider/03_belnord_club_1500.jpg 1500w, images/slider/03_belnord_club_2000.jpg 2000w, images/slider/03_belnord_club_2500.jpg 2500w">
+                <img src="images/slider/03_belnord_club_2000.jpg" data-swiper-parallax="-100" data-swiper-parallax-opacity="0">
+              </picture>
+            </div>
+            <div class="primary-slide-content">
+              <div class="primary-slide-content-upper">
+                <div class="primary-slide-content-number">03</div>
+                <div class="primary-slide-content-header header-text">The<br> Belnord Club</div>
+              </div>
+              <div class="primary-slide-content-lower-text">
+                <div class="swiper-slide-paragraph-text">
+                  <p>The Belnord Club is both an idea a physical place. The idea is to offer the highest possible level of attentiveness and service, as well as amenities discerning home buyers have come to expect. Concierge desks in both lobbies are manned with staff eager to help and enhance your experience, both within the building’s walls and outside them. The Belnord concierge team goes beyond the expected.</p>
+                </div>
+              </div>
+              <div class="primary-slide-content-lower-button">
+                <a href="#">
+                  <button class="primary-slide-content-button border-button learn-more-button">
+                    <div class="line top"></div>
+                    <div class="text">Learn More</div>
+                    <div class="line bottom"></div>
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide primary-slide">
+          <div class="primary-slide-wrapper">
+            <div class="primary-slide-image">
+              <picture>
+                <source media="(max-width: 1050px)" srcset="images/slider/05_neighborhood_mobile_400.jpg 400w, images/slider/05_neighborhood_mobile_600.jpg 600w, images/slider/05_neighborhood_mobile_800.jpg 800w, images/slider/05_neighborhood_mobile_1100.jpg 1100w">
+                <source media="(min-width: 1050px)" srcset="images/slider/05_neighborhood_1500.jpg 1500w, images/slider/05_neighborhood_2000.jpg 2000w, images/slider/05_neighborhood_2500.jpg 2500w">
+                <img src="images/slider/05_neighborhood_2000.jpg" data-swiper-parallax="-100" data-swiper-parallax-opacity="0">
+              </picture>
+            </div>
+            <div class="primary-slide-content">
+              <div class="primary-slide-content-upper">
+                <div class="primary-slide-content-number">04</div>
+                <div class="primary-slide-content-header header-text">A Remarkable<br> Neighborhood</div>
+              </div>
+              <div class="primary-slide-content-lower-text">
+                <div class="swiper-slide-paragraph-text">
+                  <p>The Upper West Side is a cultural cornucopia, as well as one of New York’s most refined and elegant residential neighborhoods. It is sought after not only for its unique access to Manhattan’s two largest parks—Central Park and Riverside Park—but for its diverse and significant architecture. Its large landmarks include the performance showcases of Lincoln Center and The American Museum of Natural History, with its Rose Center for Earth and Space, and The New York Historical Society. But it is equally blessed with innovative restaurants and an extensive array of stores, ranging from glamorous boutiques to independent specialty shops.</p>
+                </div>
+              </div>
+              <div class="primary-slide-content-lower-button">
+                <a href="#">
+                  <button class="primary-slide-content-button border-button learn-more-button">
+                    <div class="line top"></div>
+                    <div class="text">Learn More</div>
+                    <div class="line bottom"></div>
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide primary-slide">
+          <div class="primary-slide-wrapper">
+            <div class="primary-slide-image">
+              <picture>
+                <source media="(max-width: 1050px)" srcset="images/slider/06_conservators_mobile_400.jpg 400w, images/slider/06_conservators_mobile_600.jpg 600w, images/slider/06_conservators_mobile_800.jpg 800w, images/slider/06_conservators_mobile_1100.jpg 1100w">
+                <source media="(min-width: 1050px)" srcset="images/slider/06_conservators_1500.jpg 1500w, images/slider/06_conservators_2000.jpg 2000w, images/slider/06_conservators_2500.jpg 2500w">
+                <img src="images/slider/06_conservators_2000.jpg" data-swiper-parallax="-100" data-swiper-parallax-opacity="0">
+              </picture>
+            </div>
+            <div class="primary-slide-content">
+              <div class="primary-slide-content-upper">
+                <div class="primary-slide-content-number">05</div>
+                <div class="primary-slide-content-header header-text">The<br> Conservators </div>
+              </div>
+              <div class="primary-slide-content-lower-text">
+                <div class="swiper-slide-paragraph-text">
+                  <p>Behind the Belnord is an extraordinary team of deeply experienced and highly creative all-stars in the fields of real estate development and design, all working at the peak of their powers to create an extraordinary experience in living within this unique masterpiece of urban architecture. Each is leader in her or his field. We are proud to introduce them to you:</p>
+                </div>
+              </div>
+              <div class="primary-slide-content-lower-button">
+                <a href="#">
+                  <button class="primary-slide-content-button border-button learn-more-button">
+                    <div class="line top"></div>
+                    <div class="text">Learn More</div>
+                    <div class="line bottom"></div>
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-pagination primary-slider-pagination"></div>
+    </div>
+  </main>
+  <!-- main viewport end -->
+
+  <script src="vendor/jquery/jquery-3.6.0.min.js"></script>
+  <!-- <script src="vendor/gsap/gsap.min.js"></script>
+  <script src="vendor/gsap/ScrollTrigger.min.js"></script> -->
+  <script src="vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="js/script.js"></script>
+
+</body>
+
+</html>
