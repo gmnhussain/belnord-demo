@@ -84,7 +84,7 @@
   transition: opacity 300ms ease-in;
   width: 100%;
   z-index: 50;
-  height: 100vh;
+  height: 100%;
 }
 
 .primary-slider .scroll-indicator {
@@ -112,13 +112,13 @@
 }
 .primary-slider .primary-slider-wrapper {
   width: 100%;
+  height: 100%;
 }
 
 .primary-slider .primary-slide {
   height: 100%;
   width: 100%;
   z-index: 1;
-  height: 100vh;
 }
 .primary-slide-wrapper {
   -webkit-box-align: center;
