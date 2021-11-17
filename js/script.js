@@ -90,3 +90,17 @@ $(window).on("load resize", function () {
     $(".intro").fadeOut();
   });
 });
+
+// primary slider mobile modal
+$("[data-modal-btn]").on("click", function (e) {
+  e.preventDefault();
+  let number = $(this).attr("data-modal-btn");
+  $("[data-modal]").removeClass("active");
+  $(`[data-modal="${number}"]`).addClass("active");
+});
+
+$("[data-modal-close-btn]").on("click", function (e) {
+  e.preventDefault();
+  let number = $(this).attr("data-modal-close-btn");
+  $(`[data-modal="${number}"]`).removeClass("active");
+});

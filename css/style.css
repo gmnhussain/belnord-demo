@@ -84,7 +84,7 @@ body {
   font-style: normal;
   line-height: 1.4;
   letter-spacing: 0;
-  background-color: #fff;
+  background-color: #dcdcdc;
   position: relative;
   color: #333;
   color: #262626;
@@ -96,6 +96,8 @@ html {
   overflow-x: hidden;
   padding: 0;
   font-size: 95%;
+  height: 100%;
+  width: 100%;
 }
 
 h1 {
@@ -147,15 +149,14 @@ h6 {
 p {
   font-family: "SyntaxRoman", helvetica, sans-serif;
   font-size: 14.5px;
-  /* Update */
   font-family: "MartelSans", helvetica, sans-serif;
 }
 
 .viewport {
   position: relative;
   overflow-x: hidden;
-  width: 100vw;
-  height: auto;
+  width: 100%;
+  height: 100%;
 }
 
 /* Border button */
@@ -202,6 +203,8 @@ p {
 .border-button .text,
 .border-button a .text {
   padding: 15px 0 12px;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 @media only screen and (max-width: 414px) {
   .border-button .text,
@@ -294,13 +297,18 @@ p {
 
 /* ---------- preloader ---------- */
 .preloader {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   background: #333;
   position: fixed;
   z-index: 999;
   display: flex;
   align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 .preloader .loader,
 .preloader .loader:after {
@@ -370,7 +378,7 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.41);
   z-index: 3;
 }
 .intro-bg-image {
@@ -426,9 +434,11 @@ p {
   width: 50%;
   display: flex;
   justify-content: center;
+  /* update */
+  margin: calc(0.5em + 8.33vw);
 }
 .intro-textbox-logo svg {
-  max-width: 350px;
+  /* max-width: 350px; */
 }
 @media screen and (max-width: 414px) {
   .intro-bg .intro-textbox .intro-textbox-logo {
@@ -486,15 +496,15 @@ p {
   align-items: center;
   height: 100%;
 }
-.header-logo a img {
-  width: 186px;
-  height: 18px;
+.header-logo a svg {
+  width: 200px;
+  width: calc(180px + 6vw);
 }
 
 @media screen and (max-width: 1050px) {
   .header {
-    height: 50px;
-    background-color: rgba(0, 0, 0, 0.1);
+    height: 98px;
+    /* background-color: rgba(0, 0, 0, 0.1); */
     justify-content: center;
     padding: 0;
     margin: 0;
@@ -507,10 +517,34 @@ p {
   box-shadow: 1px 3px 5px rgba(149, 149, 149, 0.3);
 }
 
-/* .header-logo a {
-  width: 200px;
-}
+/*
 .header-logo #belnord-red-logo.active #letter-group {
   fill: #fff;
   transition: fill 0.5s ease;
-} */
+}
+*/
+
+/* default styles */
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+.mt-10 {
+  margin-top: 22px !important;
+  font-weight: bold;
+}
+
+.view-on-mobile {
+  display: none;
+}
+.view-on-desktop {
+  display: block;
+}
+
+@media screen and (max-width: 1200px) {
+  .view-on-mobile {
+    display: block;
+  }
+  .view-on-desktop {
+    display: none;
+  }
+}
