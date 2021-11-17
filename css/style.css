@@ -224,9 +224,9 @@ p {
 .border-button,
 .border-button span {
   font-family: "Syntax", helvetica, sans-serif;
-  font-size: 0.625em;
+  font-size: 0.725em;
   font-style: normal;
-  font-weight: bold;
+  /*font-weight: bold;*/
   line-height: 0.875em;
   text-transform: uppercase;
 }
@@ -260,9 +260,9 @@ p {
 }
 @media screen and (min-width: 1440px) {
   .header-text {
-    font-size: 2.125em;
-    letter-spacing: 0.1875em;
-    line-height: 1.4em;
+    font-size: 2em;
+    letter-spacing: 0.1em;
+    line-height: 1.5em;
   }
 }
 @media screen and (min-width: 1920px) {
@@ -387,7 +387,7 @@ p {
 
 .intro-bg .intro-textbox {
   width: 100%;
-  height: 95%;
+  height: 112%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -466,7 +466,7 @@ p {
   font-weight: 400;
   padding-left: 1.25em;
   padding-right: 1.25em;
-  font-size: 1.99em;
+  font-size: 1.3em;
   letter-spacing: 0.1em;
 }
 @media only screen and (max-width: 414px) {
@@ -489,7 +489,7 @@ p {
 
 /* header */
 .header {
-  height: 112px;
+  height: 100px;
   position: fixed;
   width: 100%;
   z-index: 99;
@@ -511,7 +511,7 @@ p {
 }
 .header-logo a svg {
   width: 200px;
-  width: calc(190px + 6vw);
+  width: calc(150px + 6vw);
 }
 
 @media screen and (max-width: 1050px) {
@@ -542,7 +542,8 @@ p {
   margin-bottom: 0 !important;
 }
 .mb-0 ~ p {
-  margin-top: 10px !important;
+  /*margin-top: 10px !important;*/
+  margin-top: 16px !important;
 }
 .mt-10 {
   margin-top: 28px !important;
