@@ -249,13 +249,13 @@ p {
   font-style: normal;
   text-transform: uppercase;
   color: #891a1c;
-  font-size: 1.625em;
-  line-height: normal;
+  font-size: 1.825em;
+  line-height: 1.55;
   letter-spacing: 0.1875em;
-  /* update */
   font-family: "Exo", serif;
   font-weight: 400;
   color: #262626;
+  letter-spacing: 0.15em;
 }
 @media screen and (min-width: 1440px) {
   .header-text {
@@ -273,7 +273,7 @@ p {
 @media (max-width: 1200px) and (min-height: 600px) {
   .header-text {
     font-size: 1.875em;
-    line-height: 1.125em;
+    /* line-height: 1.125em; */
   }
 }
 @media (max-width: 400px) {
