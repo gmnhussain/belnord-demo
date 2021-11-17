@@ -196,7 +196,8 @@ p {
 @media only screen and (max-width: 414px) {
   .border-button .text,
   .border-button a .text {
-    padding: 10px 0 8px;
+    padding: 14px 6px 12px;
+    font-size: 11px;
   }
 }
 .border-button:hover {
@@ -418,10 +419,9 @@ p {
 
 .intro-bg .intro-textbox .intro-textbox-logo {
   margin: 1.25em;
-  width: 74%;
+  width: 56%;
   display: flex;
   justify-content: center;
-  /* update */
   margin: calc(0.5em + 8.33vw);
 }
 .intro-textbox-logo svg {
@@ -431,6 +431,12 @@ p {
   .intro-bg .intro-textbox .intro-textbox-logo {
     margin-bottom: 1.625em;
     margin-top: 0;
+    width: 74%;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .intro-bg .intro-textbox .intro-textbox-logo {
+    width: 74%;
   }
 }
 .intro-textbox-text {
@@ -505,7 +511,7 @@ p {
 }
 .header-logo a svg {
   width: 200px;
-  width: calc(180px + 11vw);
+  width: calc(190px + 6vw);
 }
 
 @media screen and (max-width: 1050px) {
@@ -534,6 +540,9 @@ p {
 /* default styles */
 .mb-0 {
   margin-bottom: 0 !important;
+}
+.mb-0 ~ p {
+  margin-top: 10px !important;
 }
 .mt-10 {
   margin-top: 28px !important;

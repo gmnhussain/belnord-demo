@@ -2,7 +2,7 @@
   border-bottom: 1px solid #891a1c;
   color: #891a1c;
   font-family: "Syntax", helvetica, sans-serif;
-  font-size: 0.875em;
+  font-size: 0.8em;
   font-style: normal;
   line-height: 1.125em;
   letter-spacing: 0.125em;
@@ -65,7 +65,7 @@
 @media screen and (max-width: 1440px) {
   .primary-slide-paragraph-text p,
   .primary-slide-paragraph-text li {
-    font-size: 0.8125em;
+    font-size: 0.8em;
     line-height: 1.375em;
   }
 }
@@ -328,6 +328,7 @@
   -ms-flex-pack: center;
   justify-content: center;
   width: 100%;
+  padding-top: 2em;
 }
 @media screen and (max-width: 1200px) {
   .primary-slide-content .primary-slide-content-upper {
@@ -351,7 +352,7 @@
 
 .primary-slide-content-header {
   margin: 1em 0;
-  margin-top: 1.5em;
+  margin-top: 1.35em;
 }
 @media screen and (max-width: 1200px) {
   .primary-slide-content-header {
@@ -376,7 +377,6 @@
   justify-content: flex-end;
   width: 100%;
 }
-
 .primary-slide-paragraph-text {
   margin: 2em 0;
   max-width: 80%;
@@ -428,6 +428,14 @@
 @media screen and (max-width: 1200px) {
   .primary-slide-content-lower-button {
     height: 40%;
+  }
+}
+@media screen and (min-width: 1201px) {
+  .primary-slide-content-lower-text {
+    height: 50%;
+  }
+  .primary-slide-content-lower-button {
+    height: 0;
   }
 }
 
@@ -751,10 +759,10 @@
 .primary-slide-contact-form .input-item label {
   font-family: "MartelSans";
   font-weight: 400;
-  font-size: 0.875em;
+  font-size: 0.8em;
   color: #262626;
   position: absolute;
-  top: -20px;
+  bottom: 12px;
   text-transform: uppercase;
 }
 .primary-slide-contact-form .input-item input,
@@ -766,7 +774,7 @@
   letter-spacing: 0;
   margin: 2.5em 0;
   color: #262626;
-  margin-bottom: 2.75em;
+  margin-bottom: 1.5em;
 }
 
 .primary-slide-contact-form .input-item textarea {
@@ -833,7 +841,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 4em 0 3.5em;
+  padding: 3.25em 0 3.5em;
 }
 .primary-slide-modal .primary-slide-content-header {
   font-size: 1.87em;
@@ -933,16 +941,15 @@
   width: 38px;
   height: 38px;
   z-index: 999;
-  border: 1px solid #707070;
-  opacity: 0.27;
+  border: 1px solid rgba(112, 112, 112, 0.27);
 }
 .primary-modal-close-btn:hover {
-  opacity: 1;
+  border: 1px solid rgba(112, 112, 112, 1);
 }
 .primary-modal-close-btn::before,
 .primary-modal-close-btn::after {
   content: "";
-  width: 10px;
+  width: 19px;
   height: 1px;
   background-color: #262626;
   position: absolute;
