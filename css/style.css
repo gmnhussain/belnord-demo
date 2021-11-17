@@ -180,19 +180,6 @@ p {
   letter-spacing: 0.25em;
 }
 
-@media only screen and (max-width: 414px) {
-  .border-button.intro-textbox-button {
-    letter-spacing: 0.0625em;
-    font-size: 0.625em;
-  }
-}
-
-@media only screen and (max-width: 400px) {
-  .border-button.intro-textbox-button {
-    letter-spacing: 0;
-  }
-}
-
 .border-button .line,
 .border-button a .line {
   width: 100%;
@@ -431,7 +418,7 @@ p {
 
 .intro-bg .intro-textbox .intro-textbox-logo {
   margin: 1.25em;
-  width: 50%;
+  width: 74%;
   display: flex;
   justify-content: center;
   /* update */
@@ -442,7 +429,8 @@ p {
 }
 @media screen and (max-width: 414px) {
   .intro-bg .intro-textbox .intro-textbox-logo {
-    margin-bottom: 0.625em;
+    margin-bottom: 1.625em;
+    margin-top: 0;
   }
 }
 .intro-textbox-text {
@@ -465,18 +453,37 @@ p {
   }
 }
 .intro-bg .intro-textbox .intro-textbox-button .text {
-  margin: 0.625em 0;
+  margin: 0.8em 0;
   letter-spacing: 0.25em;
   font-family: "SyntaxRoman";
   font-family: "MartelSans";
   font-weight: 400;
-  padding-left: 32px;
-  padding-right: 32px;
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+  font-size: 1.99em;
+  letter-spacing: 0.1em;
+}
+@media only screen and (max-width: 414px) {
+  .border-button.intro-textbox-button {
+    letter-spacing: 0.0625em;
+    font-size: 0.625em;
+  }
+  .intro-bg .intro-textbox .intro-textbox-button .text {
+    font-size: 2em;
+    font-size: 13px;
+    font-size: 1.45em;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .border-button.intro-textbox-button {
+    letter-spacing: 0;
+  }
 }
 
 /* header */
 .header {
-  height: 60px;
+  height: 112px;
   position: fixed;
   width: 100%;
   z-index: 99;
@@ -485,10 +492,10 @@ p {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding-right: calc(36px + 2em);
+  padding-right: 30px;
 }
 .header-logo {
-  margin: 0 10px;
+  /* margin: 0 10px; */
 }
 .header-logo a {
   display: flex;
@@ -498,7 +505,7 @@ p {
 }
 .header-logo a svg {
   width: 200px;
-  width: calc(180px + 6vw);
+  width: calc(180px + 11vw);
 }
 
 @media screen and (max-width: 1050px) {
@@ -529,7 +536,7 @@ p {
   margin-bottom: 0 !important;
 }
 .mt-10 {
-  margin-top: 22px !important;
+  margin-top: 28px !important;
   font-weight: bold;
 }
 
