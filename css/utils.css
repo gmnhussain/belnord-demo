@@ -228,9 +228,9 @@ img {
 svg {
   fill: currentColor;
 }
-svg:not(:root) {
+/* svg:not(:root) {
   overflow: hidden;
-}
+} */
 a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
