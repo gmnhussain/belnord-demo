@@ -762,7 +762,7 @@
   font-size: 0.8em;
   color: #262626;
   position: absolute;
-  bottom: 12px;
+  top: -4px;
   text-transform: uppercase;
 }
 .primary-slide-contact-form .input-item input,
@@ -775,6 +775,7 @@
   margin: 2em 0;
   color: #262626;
   margin-bottom: 1.5em;
+  padding-bottom: 0.25em;
 }
 
 .primary-slide-contact-form .input-item textarea {
